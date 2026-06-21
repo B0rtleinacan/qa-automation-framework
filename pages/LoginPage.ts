@@ -6,21 +6,30 @@ export class LoginPage {
     readonly passwordInput: Locator;
     readonly signInButton: Locator;
     readonly loginLink: Locator;
+    readonly myAccountLink: Locator;
+    readonly forgotPasswordLink: Locator;
+    readonly forgotPasswordSubmitButton: Locator;
+    readonly forgotPasswordEmailInput: Locator;
 
-    // TODO: Fix 'this.emailInput' and 'this.passwordInput' to properly locate the input fields in the login page
-    // page.getByRole('link', { name: '' }) instead of current setup
 
     constructor(page: Page) {
         this.page = page;
-        this.emailInput = page.getByRole('link', { name: 'Email' });
-        this.passwordInput = page.getByRole('link', { name: 'Password' });
+        this.emailInput = page.getByLabel('Email Address');
+        this.passwordInput = page.getByLabel('Password');
         this.signInButton = page.getByRole('button', { name: 'SIGN IN' });
         this.loginLink = page.getByRole('link', { name: 'Log In' });
+        this.myAccountLink = page.getByRole('link', { name: 'My Account' });
+        this.forgotPasswordLink = page.getByRole('link', { name: 'Forgot your password?' });
+        this.forgotPasswordSubmitButton = page.getByRole('button', { name: 'Submit' });
+        this.forgotPasswordEmailInput = page.getByLabel('Email');
     }
+
+    // Goes directly to the main site
     async goto() {
         await this.page.goto('https://sauce-demo.myshopify.com/');
     }
 
+    // Login method
     async login(email: string, password: string) {
         await this.loginLink.click();
         await this.emailInput.fill(email);
@@ -28,6 +37,18 @@ export class LoginPage {
         await this.signInButton.click();
     }
 
-    //TODO: Add a method to test invalid login credentials
-    //TODO: Add a method to test login with empty fields
+    // Method to test empty fields login attempt
+    async emptyFieldLogin() {
+        await this.loginLink.click();
+        await this.signInButton.click();
+    }
+
+    async goToForgotPasswordField() {
+        await this.loginLink.click();
+        await this.forgotPasswordLink.click();
+    }
+
+    async inputEmailForgotPassword(email: string) {
+        await this.forgotPasswordEmailInput.fill(email);
+    }
 }
