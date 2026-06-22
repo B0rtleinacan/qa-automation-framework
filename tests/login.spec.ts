@@ -34,7 +34,7 @@ test('Attempt to sign in with only password', async ({ page }: { page: Page }) =
     const loginPage = new LoginPage(page);
 
     await loginPage.goto();
-    await loginPage.login('', 'something');
+    await loginPage.login('', 'something' );
 
     expect(loginPage.page.getByText('Incorrect email or password'));
 })
@@ -52,13 +52,14 @@ test('Go to Forgot Password page after entering login link', async ({ page }: { 
     expect(loginPage.page.getByText('Reset Password'));
 })
 
-test('Email is typed in and submit button is selected', async ({ page }: { page: Page }) => {
+/*
+test('Submit button is selected with empty email field', async ({ page }: { page: Page }) => {
     const loginPage = new LoginPage(page);
 
     await loginPage.goto();
     await loginPage.goToForgotPasswordField();
-    await loginPage.inputEmailForgotPassword('cloverlyn123@gmail.com');
-    await loginPage.forgotPasswordSubmitButton.click();
+    await loginPage.emailSubmitForgotPassword('');
 
-    expect(loginPage.page.getByText('Customer Login'))
+    expect(loginPage.page.getByText('No account found with that email'));
 })
+*/

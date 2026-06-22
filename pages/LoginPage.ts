@@ -20,8 +20,8 @@ export class LoginPage {
         this.loginLink = page.getByRole('link', { name: 'Log In' });
         this.myAccountLink = page.getByRole('link', { name: 'My Account' });
         this.forgotPasswordLink = page.getByRole('link', { name: 'Forgot your password?' });
-        this.forgotPasswordSubmitButton = page.getByRole('button', { name: 'Submit' });
-        this.forgotPasswordEmailInput = page.getByLabel('Email');
+        this.forgotPasswordSubmitButton = page.locator('#recover-email');
+        this.forgotPasswordEmailInput = page.locator('input[type="email"]');
     }
 
     // Goes directly to the main site
@@ -48,7 +48,10 @@ export class LoginPage {
         await this.forgotPasswordLink.click();
     }
 
-    async inputEmailForgotPassword(email: string) {
+    /*
+    async emailSubmitForgotPassword(email: string) {
         await this.forgotPasswordEmailInput.fill(email);
+        await this.forgotPasswordSubmitButton.click();
     }
+    */
 }
