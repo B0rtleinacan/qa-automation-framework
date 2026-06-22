@@ -12,7 +12,7 @@ export class MainPage {
     readonly checkoutLink: Locator;
     // TODO: Add My Account link locator
     // TODO: Add Catalog link locator
-    // TODO: Add Blog link locator
+    readonly blogLink: Locator;
     // TODO: Add About Us link locator
     // TODO: Add Refer a Friend link locator
     // TODO: Add Footer link locators
@@ -25,6 +25,7 @@ export class MainPage {
         this.logoutLink = page.getByText('Log Out');
         this.myCartLink = page.getByText('My Cart');
         this.checkoutLink = page.getByText('Check Out');
+        this.blogLink = page.getByRole('link', { name: 'Blog' });
     }
 
     async goto() {
