@@ -36,3 +36,19 @@ test('Add to cart workflow functions properly', async ({ page }: { page: Page })
 
     expect(mainPage.page.locator('value="1"'));
 })
+
+
+// TODO: Fix test to be able to test the specific functionality
+/*
+test('Making the value "0" clears the cart', async ({ page }: { page: Page }) => {
+    const mainPage = new CheckoutPage(page);
+
+    await mainPage.gotoMain();
+    await mainPage.addGreyJacketToCard();
+    await mainPage.cartButton.click();
+    await mainPage.page.locator('.updates').fill('0');
+
+    expect(mainPage.page.locator('.empty'));
+    expect(mainPage.page.getByText('Your cart is empty.'));
+})
+*/

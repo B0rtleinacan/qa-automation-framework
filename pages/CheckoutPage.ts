@@ -13,8 +13,8 @@ export class CheckoutPage {
     constructor(page: Page) {
         this.page = page;
         this.cartButton = page.getByRole('link', { name: 'My Cart '});
-        this.checkoutButton = page.getByRole('link', { name: 'Check Out'});
-        this.removeButton = page.getByText('Remove');
+        this.checkoutButton = page.locator('.checkout');
+        this.removeButton = page.locator('.removeLine');
         this.greyJacket = page.locator('#product-1');
     }
 
