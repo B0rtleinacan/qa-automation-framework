@@ -1,0 +1,38 @@
+import { test, Page, expect } from '@playwright/test';
+import { CheckoutPage } from '../pages/CheckoutPage';
+
+test('Cart is visible after click', async ({ page }: { page: Page }) => {
+    const mainPage = new CheckoutPage(page);
+
+    await mainPage.gotoMain();
+    await mainPage.cartButton.click();
+
+    expect(mainPage.page.locator('style="display: block'));
+})
+
+test('Cart is not visible when first entering site', async ({ page }: { page: Page }) => {
+    const mainPage = new CheckoutPage(page);
+
+    await mainPage.gotoMain();
+
+    expect(mainPage.page.locator('style="display: none'));
+})
+
+test('My Cart page is empty with messaging if "Check out" is selected with nothing in cart', async ({ page }: { page: Page }) => {
+    const mainPage = new CheckoutPage(page);
+
+    await mainPage.gotoMain();
+    await mainPage.checkoutButton.click();
+
+    expect(mainPage.page.getByText('It appears that your cart is currently empty!'));
+})
+
+test('Add to cart workflow functions properly', async ({ page }: { page: Page }) => {
+    const mainPage = new CheckoutPage(page);
+
+    await mainPage.gotoMain();
+    await mainPage.addGreyJacketToCard();
+    await mainPage.cartButton.click();
+
+    expect(mainPage.page.locator('value="1"'));
+})
