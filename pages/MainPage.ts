@@ -11,10 +11,11 @@ export class MainPage {
     readonly myCartLink: Locator;
     readonly checkoutLink: Locator;
     // TODO: Add My Account link locator
-    // TODO: Add Catalog link locator
+    readonly catalogLink: Locator;
     readonly blogLink: Locator;
-    // TODO: Add About Us link locator
-    // TODO: Add Refer a Friend link locator
+    readonly aboutUsLink: Locator;
+    readonly referFriendLink: Locator;
+    readonly searchField: Locator;
     // TODO: Add Footer link locators
 
     constructor(page: Page) {
@@ -26,10 +27,18 @@ export class MainPage {
         this.myCartLink = page.getByText('My Cart');
         this.checkoutLink = page.getByText('Check Out');
         this.blogLink = page.getByRole('link', { name: 'Blog' });
+        this.catalogLink = page.getByRole('link', { name: 'Catalog' });
+        this.aboutUsLink = page.locator('#main-menu').getByRole('link', { name: 'About Us'});
+        this.referFriendLink = page.locator('#main-menu').getByRole('link', { name: 'Refer a friend' });
+        this.searchField = page.locator('#search-field');
     }
 
     async goto() {
         await this.page.goto('https://sauce-demo.myshopify.com/');
+    }
+
+    async search(input: string) {
+        await this.searchField.fill(input);
     }
 
     // TODO: Add navigation methods for each link while not signed in
