@@ -46,13 +46,13 @@ test('Cart is cleared when remove link is clicked', async ({ page }: { page: Pag
 
     await mainPage.gotoMain();
     await mainPage.addGreyJacketToCard();
-    await mainPage.cartButton.click();
-    await mainPage.removeButton.click();
+    await mainPage.checkoutButton.click();
+    await mainPage.page.locator('.remove').click();
 
-    expect(mainPage.page.locator('.empty'));
-    expect(mainPage.page.getByText('Your cart is empty.'));
+    expect(mainPage.page.getByText('It appears your cart is currently empty!'));
 })
 */
+
 
 
 test('Checkout button with item in cart leads to checkout page', async ({ page }: { page: Page }) => {
@@ -65,3 +65,16 @@ test('Checkout button with item in cart leads to checkout page', async ({ page }
 
     expect(mainPage.page.getByText('Sauce Demo'));
 })
+
+/*
+test('putting 0 as input field removes item in cart', async ({ page }: { page: Page }) => {
+    const mainPage = new CheckoutPage(page);
+
+    await mainPage.gotoMain();
+    await mainPage.addGreyJacketToCard();
+    await mainPage.gotoCart();
+    await mainPage.page.locator('#updates[]').fill('0');
+
+    expect(mainPage.page.getByText('It appears your cart is currently empty!'));
+})
+*/
