@@ -1,0 +1,14 @@
+{
+    "users": {
+        "1": {
+            "email": "something@another.com",
+            "password": "ri!2o3k",
+            "result": ["sucess", "fail"]
+        },
+        "2": {
+            "email": "another@email.com",
+            "password": "i91$3fm100",
+            "result": ["sucess", "fail"]
+        }
+    }
+}
