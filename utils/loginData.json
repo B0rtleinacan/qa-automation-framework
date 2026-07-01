@@ -1,14 +1,25 @@
 {
     "users": {
         "1": {
+            "firstname": "John:",
+            "lastname": "Doe",
             "email": "something@another.com",
             "password": "ri!2o3k",
             "result": ["sucess", "fail"]
         },
         "2": {
+            "firstname": "Jane",
+            "lastname": "Doe",
             "email": "another@email.com",
             "password": "i91$3fm100",
             "result": ["sucess", "fail"]
+        },
+        "3": {
+            "firstname": "Fred",
+            "lastname": "Gilbert",
+            "email": "freddyreddy@gmail.com",
+            "password": "fortniteG0d#@1",
+            "result": ["success", "fail"]
         }
     }
 }

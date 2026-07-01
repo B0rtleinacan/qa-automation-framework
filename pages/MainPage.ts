@@ -20,7 +20,7 @@ export class MainPage {
 
     constructor(page: Page) {
         this.page = page;
-        this.signUpLink = page.getByText('Sign up');
+        this.signUpLink = page.getByText('Sign Up');
         this.loginLink = page.getByText('Log In');
         this.searchLink = page.getByText('Search');
         this.logoutLink = page.getByText('Log Out');
@@ -41,6 +41,9 @@ export class MainPage {
         await this.searchField.fill(input);
     }
 
+    async gotoSignUp(){   
+    await this.signUpLink.click();
+}
     // TODO: Add navigation methods for each link while not signed in
     // TODO: Add navigation methods for each link while signed in
 }
