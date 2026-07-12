@@ -52,6 +52,7 @@ The framework follows the POM (Page Object Model).
 - [x] Playwright setup
 - [x] Page Object Model
 - [x] GitHub Actions
+- [ ] Parallel Execution
 - [ ] API Testing
 - [ ] Data-driven Testing
 - [ ] Performance Testing
