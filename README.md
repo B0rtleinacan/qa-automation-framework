@@ -27,18 +27,13 @@ With that being said, I am moving away from the game industry and 100% manual te
 Deepening my knowledge is something I always strive for and I have been able to deepen my knowledge of both technologies (Typescript, Playwright) as well as changed the way I think about QA, diving deeper into what it means and takes to be in QA. 
 
 ### Project Structure (currently)
-|
-|-- .github/workflows/
-|-- artifacts/
-|-- pages
-|-- tests/
-|-- utils/
-|-- LICESNE
-|-- package-lock.json
-|-- package.json
-|-- playwright.config.ts
-|-- README.md
-|-- tsconfig.json
+│
+├── .github/
+│   └── workflows/
+├── tests/
+├── pages/
+├── utils/
+└── playwright.config.ts
 
 ### Framework Architecture
 
