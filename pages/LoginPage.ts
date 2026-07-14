@@ -17,7 +17,7 @@ export class LoginPage {
         this.page = page;
         this.emailInput = page.getByLabel('Email Address');
         this.passwordInput = page.getByLabel('Password');
-        this.signInButton = page.getByRole('button', { name: 'SIGN IN' });
+        this.signInButton = page.getByRole('button', { name: 'Sign In' });
         this.loginLink = page.getByRole('link', { name: 'Log In' });
         this.myAccountLink = page.getByRole('link', { name: 'My Account' });
         this.forgotPasswordLink = page.getByRole('link', { name: 'Forgot your password?' });
