@@ -52,7 +52,7 @@ test('Go to Forgot Password page after entering login link', async ({ page }: { 
     expect(loginPage.page.getByText('Reset Password'));
 })
 
-/*
+
 test('Submit button is selected with email field', async ({ page }: { page: Page }) => {
     const loginPage = new LoginPage(page);
 
@@ -62,7 +62,7 @@ test('Submit button is selected with email field', async ({ page }: { page: Page
 
     expect(loginPage.page.getByText('No account found with that email'));
 })
-*/
+
 
 test('Attempt to submit with empty field', async ({ page }: { page: Page }) => {
     const loginPage = new LoginPage(page);
