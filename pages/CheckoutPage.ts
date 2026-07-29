@@ -32,5 +32,9 @@ export class CheckoutPage {
     }
 
     // TODO: Add checkout process method
+    async checkoutProcess() {
+        // TODO: Add workflow to checkout process
+    }
     // TODO: Add removal of item method
+    // TODO: Add payment method and use mock test data using mockCrediCardData.json
 }
