@@ -1,0 +1,16 @@
+{
+    "creditCard": {
+       "1" : {
+            "cardnumber": "4242424242424242",
+            "cvc": "123",
+            "expirationDate":"12/34",
+            "nameOnCard": "John Doe"
+        },
+        "2": {
+            "cardNumber": "5555555555554444",
+            "cvc": "456",
+            "expirationDate": "11/29",
+            "nameOnCard": "Jane Doe"
+        }
+    }
+}
