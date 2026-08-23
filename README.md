@@ -28,11 +28,16 @@ Deepening my knowledge is something I always strive for and I have been able to 
 
 ### Project Structure (currently)
 │
+
 ├── .github/
+
 │   └── workflows/
 ├── tests/
+
 ├── pages/
+
 ├── utils/
+
 └── playwright.config.ts
 
 ### Framework Architecture
